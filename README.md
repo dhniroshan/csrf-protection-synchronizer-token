@@ -30,4 +30,4 @@ http://localhost
 
 After you have to point to folder that you cloned project folder.
 
-You can check more detail on this blog post : https://dhanushkaatimorathanna.wordpress.com/?p=14
+You can check more detail on this blog post : https://dhanushkaatimorathanna.wordpress.com/2019/05/17/cross-site-request-forgerycsrf-protection-via-synchronize-token/
