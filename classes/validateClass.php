@@ -3,7 +3,7 @@
 if(isset($_POST['uname'],$_POST['psw'])){
 	$uname = $_POST['uname'];
 	$pwd = $_POST['psw'];
-	if($uname == 'sarasa' && $pwd == 'password'){
+	if($uname == 'admin' && $pwd == 'password'){
         ob_start();
         echo 'Successfully logged in';
         session_start();
