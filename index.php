@@ -1,46 +1,58 @@
-
-<?php
-// If user already logged in, index page redirected to home page
-ob_start();
-session_start();
-if(isset($_SESSION['USERNAME'])){
-	header("location: ./views/home.php");
-}
-?>
 <!DOCTYPE html>
 <html>
-	<head>
-		<title>SSD</title>
-		<link rel="stylesheet" href="./css/style.css">
-	</head>
-	<body>
-		<!-- form action send to validateClass.php via POST Request -->
-		<form action="./classes/validateClass.php" method="post">
-			<!-- image -->
-			<div class="imgcontainer">
-				<img src="./images/img_avatar2.png" alt="Avatar" class="avatar">
-			</div>
-			<!-- here shows the errors if any unathurised accesses -->
-			<div class="">
-				<?php
-					if(isset($_GET['er'])){
-						echo '<h1 style="text-align:center;color:red;">'.$_GET['er'].'</h1><br />';
-					}
-				?>
-			</div>
-			<div class="container">
-				<!-- username -->
-				<label for="uname"><b>Username</b></label>
-				<input type="text" placeholder="Enter Username" name="uname" required>
-				<!-- Password -->
-				<label for="psw"><b>Password</b></label>
-				<input type="password" placeholder="Enter Password" name="psw" required>
-				<!-- Submit Button -->
-				<button type="submit">Login</button>
-				<label>
-					<input type="checkbox" checked="checked" name="remember"> Remember me
-				</label>
-			</div>
-		</form>
-	</body>
+<head>
+  <meta charset="utf-8">
+  <title>CSRF - Synchronizer Token Pattern</title>
+  <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="css/my-login.css">
+</head>
+<body class="my-login-page">
+  <section class="h-100">
+    <div class="container h-100">
+      <div class="row justify-content-md-center h-100">
+        <div class="card-wrapper">
+          
+          <div class="card fat">
+            <div class="card-body">
+              <h4 class="card-title">Login</h4>
+              <form method="POST" action="validate.php">
+               
+                <div class="form-group">
+                  <label>Username</label>
+
+                  <input id="username" type="username" class="form-control" name="username" value="admin" required>
+                </div>
+
+                <div class="form-group">
+                  <label for="password">Password
+                  </label>
+                  <input id="password" type="password" class="form-control" name="password" required value="admin">
+                </div>
+
+                <div class="form-group no-margin">
+                  <button type="submit" class="btn btn-primary btn-block">
+                    Login
+                  </button>
+                </div>
+              </form>
+            </div>
+			
+			<div class="card-body">
+                  <h5> Login Credentials : </h5>
+                  <p style="margin-top:20px"> Username - admin </p>
+				  <p style="margin-top:20px"> Password - admin </p>
+                </div>
+			
+          </div>
+          <div class="footer">
+            Copyright &copy; CSRF Synchronizer Token Pattern
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script src="js/jquery.min.js"></script>
+  <script src="bootstrap/js/bootstrap.min.js"></script>
+</body>
 </html>
